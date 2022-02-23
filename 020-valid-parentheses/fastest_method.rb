@@ -2,21 +2,22 @@ def is_valid(s)
   puts "\nRunning for #{s}"
   stack = []
   count = 0
+  pairs = {
+    ')' => '(',
+    '}' => '{',
+    ']' => '['
+  }
   s.each_char do |char|
     last_ele = stack[-1]
-    if (char == ')' && last_ele == '(') ||
-       (char == '}' && last_ele == '{') ||
-       (char == ']' && last_ele == '[')
+    if !stack.empty? && pairs[char] == stack[-1]
       stack.pop
     else
       stack << char
     end
-    puts "##{count} Char= #{char} Last_ele= #{last_ele} Stack= #{stack}"
     count += 1
+    puts "##{count} Char= #{char} Last_ele= #{last_ele} Stack= #{stack}"
   end
-  return true if stack.empty?
-
-  false
+  stack.empty?
 end
 
 
@@ -28,6 +29,6 @@ end
 # p is_valid("(word)")
 # p is_valid("()[]{}")
 # p is_valid("(]")
-# p is_valid("{[]}")
-# p is_valid("([)]")
+p is_valid("{[]}")
+p is_valid("([)]")
 p is_valid("(([]){})")
