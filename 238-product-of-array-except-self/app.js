@@ -2,7 +2,9 @@
  * @param {number[]} nums
  * @return {number[]}
  */
-var productExceptSelf = function (nums) {}
+var productExceptSelf = function (nums) {
+  nums.forEach(n => {})
+}
 
 // Example 1:
 // Input: nums = [1,2,3,4]
