@@ -3,19 +3,14 @@
  * @return {void} Do not return anything, modify nums in-place instead.
  */
 var moveZeroes = function (nums) {
-  if (nums.length == 1) {
-    return nums
-  }
-  first_zero = 0
   checked = 0
-  total = nums.length - 1
   for (let i = 0; i < nums.length; i++) {
-    console.log("i:", i, "total:", total, "checked:", checked, "nums[i]=", nums[i], "nums:", ...nums)
+    // console.log("i:", i, "total:", total, "checked:", checked, "nums[i]=", nums[i], "nums:", ...nums)
     if (nums[i] != 0) {
-      let swap = nums[0 + checked]
-      nums[0 + checked] = nums[i]
+      let swap = nums[checked]
+      nums[checked] = nums[i]
       nums[i] = swap
-      checked += 1
+      checked++
     }
   }
   return nums
