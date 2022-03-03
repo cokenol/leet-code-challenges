@@ -14,16 +14,16 @@ var rotate = function (nums, k) {
 
   let arr = []
   let swap_index = 0
-  let first = [nums[0]]
+  let first = []
   total = nums.length
-  for (let i = 0; i < nums.length; i++) {
-    if (total - k + i > nums.length - 1) {
+  for (let i = 0; i < total; i++) {
+    if (total - k + i > total - 1) {
       swap_index = -k + i
     } else {
       swap_index = total - k + i
     }
     console.log("i=", i, "nums before=", ...nums, "swap_index:", swap_index, "first=", first)
-    if (i > 0 && i < nums.length - k) {
+    if (i < total - k) {
       first.push(nums[i])
     }
     if (i >= k) {
