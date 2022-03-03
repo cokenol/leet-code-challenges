@@ -4,13 +4,37 @@
  * @return {void} Do not return anything, modify nums in-place instead.
  */
 var rotate = function (nums, k) {
-  next = 0
-  for (let i = 0; i < nums.length; i++) {
-    let swap = nums[-k - next]
-    nums[-k - next] = nums[i]
-    nums[i] = swap
-    next++
+  if (nums.length == 1) {
+    return nums
   }
+
+  while (k > nums.length) {
+    k -= nums.length
+  }
+
+  let arr = []
+  let swap_index = 0
+  let first = [nums[0]]
+  total = nums.length
+  for (let i = 0; i < nums.length; i++) {
+    if (total - k + i > nums.length - 1) {
+      swap_index = -k + i
+    } else {
+      swap_index = total - k + i
+    }
+    console.log("i=", i, "nums before=", ...nums, "swap_index:", swap_index, "first=", first)
+    if (i > 0 && i < nums.length - k) {
+      first.push(nums[i])
+    }
+    if (i >= k) {
+      nums[i] = first[i - k]
+    } else {
+      nums[i] = nums[swap_index]
+    }
+
+    console.log("i=", i, "nums after=", ...nums, "swap_index:", swap_index, "first=", first, "first[k-i]", first[k - i], `\n`)
+  }
+
   return nums
 }
 
@@ -34,4 +58,5 @@ var rotate = function (nums, k) {
 // -231 <= nums[i] <= 231 - 1
 // 0 <= k <= 105
 
-console.log(rotate([1, 2, 3, 4, 5, 6, 7], 1))
+// console.log(...rotate([1, 2, 3, 4, 5, 6, 7], 3))
+console.log(...rotate([1, 2], 3))
