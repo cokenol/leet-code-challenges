@@ -5,22 +5,16 @@ class MyQueue {
 
   push(value) {
     this.queue.push(value)
-    return this
   }
 
   pop() {
-    this.queue.pop()
-    return this.queue
+    this.queue.shift()
   }
   peek() {
     return this.queue[0]
   }
   empty() {
-    if (this.queue.length === 0) {
-      return true
-    } else {
-      return false
-    }
+    return this.queue.length === 0 ? true : false
   }
 }
 
