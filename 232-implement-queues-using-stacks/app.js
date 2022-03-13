@@ -4,11 +4,11 @@ class MyQueue {
   }
 
   push(value) {
-    this.queue.push(value)
+    return this.queue.push(value)
   }
 
   pop() {
-    this.queue.shift()
+    return this.queue.shift()
   }
   peek() {
     return this.queue[0]
