@@ -4,14 +4,15 @@
  */
 let calculations = 0
 var climbStairs = function (n) {
-  let dp = []
+  let dp = {}
   return function climbS(n) {
+    // console.log("n", n, "dp", dp)
     if (n <= 3) return n
     if (dp[n]) {
       return dp[n]
     } else {
       calculations++
-      dp[n] = climbS(n - 1) + climbS(n - 2)
+      dp[n] = climbS(n - 2) + climbS(n - 1)
       return dp[n]
     }
   }
@@ -21,6 +22,7 @@ const climb = climbStairs()
 
 for (let i = 0; i <= 20; i++) {
   console.log("For", i, "number of steps is=", climb(i), "distinct ways")
+  // console.log(climb(20), "distinct ways")
   console.log("calc=", calculations, "\n")
 }
 
