@@ -19,9 +19,9 @@ var isHappy = function (n) {
       return true
     }
     if (set.has(n)) {
-      set.add(n)
-    } else {
       return false
+    } else {
+      set.add(n)
     }
     return hap(res)
   }
