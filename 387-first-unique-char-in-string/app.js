@@ -3,23 +3,21 @@
  * @return {number}
  */
 
-// Time - 116 ms, faster than 76.26% of JavaScript online submissions for First Unique Character in a String.
-// Space - 46.4 MB, less than 28.73% of JavaScript online submissions for First Unique Character in a String.
+// Time - 92 ms, faster than 95.27% of JavaScript online submissions for First Unique Character in a String.
+// Space - 45.9 MB, less than 37.77% of JavaScript online submissions for First Unique Character in a String.
 var firstUniqChar = function (s) {
   // code here
-  let count = {}
   let index = {}
+  let set = new Set()
   for (let i = 0; i < s.length; i++) {
-    if (!count[s[i]]) {
-      count[s[i]] = 1
-      index[s[i]] = i
-    } else {
-      count[s[i]] += 1
+    if (set.has(s[i])) {
       delete index[s[i]]
+    } else {
+      set.add(s[i])
+      index[s[i]] = i
     }
   }
   console.log("index", index)
-  console.log("count:", count)
   let indexes = Object.values(index)
   if (indexes.length === 0) {
     return -1
