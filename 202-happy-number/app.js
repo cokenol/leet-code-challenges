@@ -3,11 +3,11 @@
  * @return {boolean}
  */
 
-// Time = 85 ms, faster than 65.11% of JavaScript online submissions for Happy Number.
-// Space - 43.5 MB, less than 57.61% of JavaScript online submissions for Happy Number.
+// Time = 64 ms, faster than 96.51% of JavaScript online submissions for Happy Number.
+// Space - 44.1 MB, less than 42.48% of JavaScript online submissions for Happy Number.
 
 var isHappy = function (n) {
-  let dp = {}
+  let set = new Set()
   return function hap(n) {
     let res = 0
     // console.log(n, dp)
@@ -15,11 +15,11 @@ var isHappy = function (n) {
       res += n ** 2
     })
     if (res === 1) {
-      dp = {}
+      set.clear()
       return true
     }
-    if (!dp[n]) {
-      dp[n] = res
+    if (set.has(n)) {
+      set.add(n)
     } else {
       return false
     }
