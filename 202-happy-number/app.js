@@ -28,10 +28,14 @@ var isHappy = function (n) {
 }
 
 const happy = isHappy()
+arr = []
+for (let i = 0; i < 100; i++) {
+  arr.push(Math.round(Math.random() * 1000))
+  // arr.push(i)
+}
 
-arr = [19, 7, 13, 3, 23]
 arr.forEach(n => {
-  console.log(happy(n))
+  console.log(n, happy(n))
 })
 /*
 Write an algorithm to determine if a number n is happy.
