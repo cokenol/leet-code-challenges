@@ -1,5 +1,5 @@
-// time - 75 ms, faster than 64.57% of JavaScript online submissions for Plus One.
-// Space - 42.1 MB, less than 42.83% of JavaScript online submissions for Plus One.
+// time - 60 ms, faster than 93.14% of JavaScript online submissions for Plus One.
+// Space - 42.5 MB, less than 11.01% of JavaScript online submissions for Plus One.
 
 var plusOne = function (digits) {
   let len = digits.length
