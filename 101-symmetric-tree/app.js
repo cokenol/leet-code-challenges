@@ -11,8 +11,8 @@ function TreeNode(val, left, right) {
  * @return {boolean}
  */
 
-// Time - 56 ms, faster than 99.76% of JavaScript online submissions for Symmetric Tree.
-// Space - 45.2 MB, less than 9.91% of JavaScript online submissions for Symmetric Tree.
+// Time - 48 ms, faster than 100% of JavaScript online submissions for Symmetric Tree.
+// Space - 45.1 MB, less than 15.38% of JavaScript online submissions for Symmetric Tree.
 var isSymmetric = function (root) {
   return check(root.left, root.right)
 }
