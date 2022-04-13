@@ -20,9 +20,6 @@ def validAnagram(n):
             return False
     return True
 
-
-
-
 arr = [
     ["anagram", "nagaram"],
     ["cat", "car"],
