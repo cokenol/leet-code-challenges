@@ -1,5 +1,5 @@
-# Runtime: 125 ms, faster than 97.01% of Python3 online submissions for Two Sum II - Input Array Is Sorted.
-# Memory Usage: 15 MB, less than 45.80% of Python3 online submissions for Two Sum II - Input Array Is Sorted.
+# Runtime: 136 ms, faster than 87.45% of Python3 online submissions for Two Sum II - Input Array Is Sorted.
+# Memory Usage: 14.8 MB, less than 91.22% of Python3 online submissions for Two Sum II - Input Array Is Sorted.
 
 class Solution:
     def twoSum(self, numbers: List[int], target: int) -> List[int]:
