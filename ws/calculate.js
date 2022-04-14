@@ -16,15 +16,16 @@ function calculate(string) {
     res = Number.parseFloat(times[1]) * Number.parseFloat(times[2])
     string = string.replace(times[0], res)
   }
-  while (string.includes("+")) {
-    add = string.match(/(\d+\.*\d*)\+(\d+\.*\d*)/)
-    res = Number.parseFloat(add[1]) + Number.parseFloat(add[2])
-    string = string.replace(add[0], res)
-  }
-  while (string.includes("-")) {
+  while (string.search(/(\d+\.*\d*)\-(\d+\.*\d*)/) != -1) {
     subtract = string.match(/(\d+\.*\d*)\-(\d+\.*\d*)/)
     res = Number.parseFloat(subtract[1]) - Number.parseFloat(subtract[2])
     string = string.replace(subtract[0], res)
+  }
+  while (string.includes("+")) {
+    add = string.match(/(\-*\d+\.*\d*)\+(\-*\d+\.*\d*)/)
+    console.log(add)
+    res = Number.parseFloat(add[1]) + Number.parseFloat(add[2])
+    string = string.replace(add[0], res)
   }
   return string
 }
