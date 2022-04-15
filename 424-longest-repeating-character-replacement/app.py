@@ -1,5 +1,5 @@
-# Runtime: 82 ms, faster than 99.40% of Python3 online submissions for Longest Repeating Character Replacement.
-# Memory Usage: 14 MB, less than 60.99% of Python3 online submissions for Longest Repeating Character Replacement.
+# Runtime: 88 ms, faster than 99.08% of Python3 online submissions for Longest Repeating Character Replacement.
+# Memory Usage: 13.8 MB, less than 94.48% of Python3 online submissions for Longest Repeating Character Replacement.
 
 class Solution:
     def characterReplacement(self, s: str, k: int) -> int:
