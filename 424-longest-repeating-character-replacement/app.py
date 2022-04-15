@@ -1,5 +1,5 @@
-# Runtime: 256 ms, faster than 26.38% of Python3 online submissions for Longest Repeating Character Replacement.
-# Memory Usage: 13.8 MB, less than 94.48% of Python3 online submissions for Longest Repeating Character Replacement.
+# Runtime: 127 ms, faster than 86.32% of Python3 online submissions for Longest Repeating Character Replacement.
+# Memory Usage: 14 MB, less than 60.99% of Python3 online submissions for Longest Repeating Character Replacement.
 
 class Solution:
     def characterReplacement(self, s: str, k: int) -> int:
@@ -12,18 +12,13 @@ class Solution:
             else:
                 count[char] += 1
             checking += char
-            if len(count.values()) > 1:
-                while sum(sorted(count.values())[:-1]) > k:
-                    if longest < len(checking) - 1:
-                        longest = len(checking) - 1
-                    count[checking[0]] -= 1
-                    checking = checking[1:]
-            # print(char, checking, count, longest)
-        countTotal = sum(count.values())
-        if longest < countTotal:
-            return countTotal
-        else:
-            return longest
+            if len(checking) - max(count.values()) > k:
+                count[checking[0]] -= 1
+                checking = checking[1:]
+            if longest < len(checking):
+                longest = len(checking)
+            print(char, checking, count, longest)
+        return longest
 
 
 
