@@ -7,7 +7,7 @@ class Solution(object):
         """
         half = 1
         print("nums:", nums, "target", target)
-        if len(nums)//2 < 1:
+        if len(nums) == 1:
             if nums[0] == target:
                 return 0
             else:
