@@ -6,7 +6,7 @@ class Solution(object):
         :rtype: int
         """
         half = 1
-        print("nums:", nums, "target", target)
+        # print("nums:", nums, "target", target)
         if len(nums) == 1:
             if nums[0] == target:
                 return 0
